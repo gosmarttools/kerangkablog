@@ -1,0 +1,32 @@
+{
+  "name": "@bloggerkit/root",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.20.0",
+  "scripts": {
+    "format": "biome format --max-diagnostics=100 --log-kind=compact",
+    "format:all": "pnpm run format .",
+    "format:write": "pnpm run format:all --write",
+    "lint": "FORCE_COLOR=1 turbo run lint --continue --concurrency=50% --filter='./packages/*'",
+    "lint:all": "biome lint --max-diagnostics=100 --log-kind=compact .",
+    "lint:fix": "pnpm run lint:all --write",
+    "check": "FORCE_COLOR=1 turbo run check --continue --concurrency=50% --filter='./packages/*'",
+    "check:all": "biome check --max-diagnostics=150 --log-kind=compact .",
+    "check:fix": "pnpm run check:all --write",
+    "check:types": "FORCE_COLOR=1 turbo check:types",
+    "upgrade": "pnpm dlx npm-check-updates@latest --workspaces --root --peer --interactive --format group,cooldown,time",
+    "build": "FORCE_COLOR=1 turbo run build --filter='./packages/*'",
+    "dev": "FORCE_COLOR=1 turbo run dev --concurrency=24 --filter='./packages/*'",
+    "test": "FORCE_COLOR=1 turbo run test",
+    "publish-packages": "PUBLISH=true pnpm run check:types && pnpm run build && changeset publish",
+    "version-packages": "changeset version && pnpm run format:write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.7",
+    "@changesets/changelog-github": "^0.7.0",
+    "@changesets/cli": "^2.31.1",
+    "@changesets/config": "^3.1.4",
+    "turbo": "^2.10.8",
+    "typescript": "^6.0.3"
+  }
+}

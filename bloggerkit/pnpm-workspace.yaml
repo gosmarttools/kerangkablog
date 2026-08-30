@@ -1,0 +1,25 @@
+packages:
+  - packages/**
+  - examples/**
+
+shellEmulator: true
+enablePrePostScripts: true
+engineStrict: true
+preferWorkspacePackages: true
+linkWorkspacePackages: true
+strictPeerDependencies: true
+autoInstallPeers: false
+dedupePeers: true
+
+minimumReleaseAge: 1440
+
+catalog:
+  "@tsdown/css": "^0.22.14"
+  "@types/node": "^26.1.2"
+  tsdown: "^0.22.14"
+  vite: "^8.2.0"
+  vitest: "^4.1.10"
+
+allowBuilds:
+  "@swc/core": true
+  esbuild: true

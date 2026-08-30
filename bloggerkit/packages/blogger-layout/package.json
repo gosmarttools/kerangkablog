@@ -1,0 +1,54 @@
+{
+  "name": "blogger-layout",
+  "version": "0.0.1",
+  "description": "Reusable layout styles for Blogger themes.",
+  "keywords": [
+    "blogger-theme"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Deo Kumar",
+    "email": "deo@fineshopdesign.com",
+    "url": "https://github.com/kumardeo"
+  },
+  "homepage": "https://github.com/bloggerkit/bloggerkit/tree/main/packages/blogger-layout#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloggerkit/bloggerkit",
+    "directory": "packages/blogger-layout"
+  },
+  "bugs": {
+    "url": "https://github.com/bloggerkit/bloggerkit/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "lint": "biome lint ./src",
+    "check": "biome check ./src",
+    "check:types": "tsc --noEmit",
+    "build": "NODE_ENV=production tsdown",
+    "dev": "NODE_ENV=development tsdown --watch"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    "./modern.css": "./dist/modern.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@tsdown/css": "catalog:",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:"
+  }
+}
