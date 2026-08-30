@@ -1,0 +1,25 @@
+name: Reusable build and test workflow
+
+on: [workflow_call]
+
+# env:
+#   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+#   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+#   TURBO_CACHE: remote:rw
+
+jobs:
+  build_typecheck:
+    name: 🔎 Build and typecheck
+    uses: ./.github/workflows/build-reusable.yml
+    with:
+      afterBuild: pnpm check:types
+      os: '["ubuntu-latest"]'
+    secrets: inherit
+
+  test:
+    name: ⚫️ Run Vitest tests
+    uses: ./.github/workflows/build-reusable.yml
+    with:
+      afterBuild: pnpm run test
+      os: '["ubuntu-latest"]'
+    secrets: inherit

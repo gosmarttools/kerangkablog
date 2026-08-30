@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/@changesets/config/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "bloggerkit/bloggerkit" }
+  ],
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "ignore": ["@examples/*"],
+  "access": "public",
+  "baseBranch": "origin/main",
+  "updateInternalDependencies": "patch"
+}
