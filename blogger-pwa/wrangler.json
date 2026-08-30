@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blogger-pwa",
+  "compatibility_date": "2026-05-10",
+  "assets": {
+    "directory": "bucket",
+    "html_handling": "drop-trailing-slash"
+  },
+  "dev": {
+    "port": 8080
+  }
+}
